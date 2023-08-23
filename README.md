@@ -214,7 +214,7 @@ To utilize this guide for pentesting or bug hunting, remember that understanding
 
 2. **Identify Potentially Impactful Functionality Abilities:** Recognize the possibilities of existing impactful functionalities that can wreak havoc if manipulated. These could be unauthorized data access including but not limited to internal-only data or other users' personal data. State-altering actions such as permission change or tinkering with users, groups, and organizations also fall under this category.
 
-3. **Varies Prompt Injection Attacks**: Based on the [promptmap](https://github.com/utkusen/promptmap) project, I'd suggest testing the full spectrum of possible prompt injection attacks:
+3. **Various Prompt Injection Attacks**: Based on the [promptmap](https://github.com/utkusen/promptmap) project, I'd suggest testing the full spectrum of possible prompt injection attacks:
     - **Basic Injection:** Start with the simplest form and ask the AI to execute a state-changing action or leak confidential data.
     - **Translation Injection:** Try manipulating the system in multiple languages.
     - **Context Switch:** Explore the possibility of asking something related to its primary task, then pivot into an unrelated harmful request.
