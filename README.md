@@ -9,7 +9,8 @@
 [6. New Vectors for Traditional Web Vulnerabilities](#newvectors)  
 [7. Mitigations](#mitigations)  
 [9. Multi-modal Considerations](#multimodal)  
-[10. Conclusion](#conclusion)  
+[10. Applying These Methods to Pentesting](#pentesting)  
+[11. Conclusion](#conclusion)  
 
 **Purpose:**
 The purpose of this guide is to to answer the questions: "Should I be worried about prompt injection? If so, why?" .
@@ -197,6 +198,24 @@ Image-processing generative AI can also be suceptible to prompt injection leadin
 https://twitter.com/wunderwuzzi23/status/1679676160341581824
 
 There is multi-modal GPT-4 coming out soon, and it will have the same issue. Since the image processing functionality can do OCR (optical character recognition), and they are attached to LLMs, prompt injection text can be in the image and be processed by the LLM.
+
+<a name="pentesting"/>
+
+## Applying These Methods to Pentesting
+
+To utilize this guide for pentesting or bug hunting, remember that understanding an application's or feature's prompt handling processes is key to uncovering prompt injection opportunities. Here's how you can structure your approach:
+
+1. **Identify and Understand Untrusted Inputs:** Using this guide, figure out all the ways untrusted input can find its way into the AI system. Direct methods like prompt interactions or more subtle methods like support chatbots are excellent places to start. If the application offers more advanced interaction methods like web browsing or email processing, try those of course.
+
+2. **Identify Potentially Impactful Functionality Abilities:** Recognize the possibilities of existing impactful functionalities that can wreak havoc if manipulated. These could be unauthorized data access including but not limited to internal-only data or other users' personal data. State-altering actions such as permission change or tinkering with users, groups, and organizations also fall under this category.
+
+3. **Varies Prompt Injection Attacks**: Based on the [promptmap](https://github.com/utkusen/promptmap) project, I'd suggest testing the full spectrum of possible prompt injection attacks:
+    - **Basic Injection:** Start with the simplest form and ask the AI to execute a state-changing action or leak confidential data.
+    - **Translation Injection:** Try manipulating the system in multiple languages.
+    - **Context Switch:** Explore the possibility of asking something related to its primary task, then pivot into an unrelated harmful request.
+    - **External Prompt Injection:** Remember to explore how external input processed by LLM could be manipulated to inject malicious prompts.
+
+4. **Explore other Vulnerabilities:** Using the primer's guide, see if other web-specific vulnerabilities can be achieved through prompt injection. Investigate SSRF, SQL Injection, and RCE directly. If any UI returns the manipulated outputs directly to the user, test for potential XSS vulnerabilities.
 
 <a name="conclusion"/>
 
