@@ -199,7 +199,8 @@ You can further explore potential mitigations I've discussed on my [blog](https:
 
 ## Multi-modal Considerations
 Image-processing generative AI can also be suceptible to prompt injection leading to all the implications that we've discussed above. Johann was the first to share it in Bard:
-https://twitter.com/wunderwuzzi23/status/1679676160341581824
+
+[https://twitter.com/wunderwuzzi23/status/1679676160341581824](https://twitter.com/wunderwuzzi23/status/1679676160341581824)
 
 There is multi-modal GPT-4 coming out soon, and it will have the same issue. Since the image processing functionality can do OCR (optical character recognition), and they are attached to LLMs, prompt injection text can be in the image and be processed by the LLM.
 
