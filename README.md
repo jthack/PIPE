@@ -1,9 +1,6 @@
-# PIPE
-Prompt Injection Primer for Engineers
+# PIPE - Prompt Injection Primer for Engineers
 
-![PIPE](pipe.png)
-
-## Table of Contents
+### Table of Contents
 [1. Introduction](#introduction)  
 [2. Background](#background)  
 [3. Do I need to worry about prompt injection?](#worry)  
@@ -13,6 +10,10 @@ Prompt Injection Primer for Engineers
 [7. Mitigations](#mitigations)  
 [9. Multi-modal Considerations](#multimodal)  
 [10. Conclusion](#conclusion)  
+
+![PIPE](pipe.png)
+
+
 
 <a name="introduction"/>
 
