@@ -114,7 +114,7 @@ D. Has the model been fine-tuned, given access to embeddings, or have a look-up 
 
 ## Attack Scenarios
 
-It's often extremely helpful to know the specific attack scenerios that could occur. Below is a non-exhaustive table of attack scenarios. Find the row for the **Untrusted Input** that your application or feature allows and match it up with the column of **Impactful Functionality** that exists in your app or feature. 
+It's often extremely helpful to know the specific attack scenerios that could occur. Below is a non-exhaustive table of attack scenarios. Find the row for the **Untrusted Input** that your application or feature allows and match it up with the column of the **Impactful Functionality** that exists in your app or feature. 
 
 The markdown table under the image can be hard to read depending on the screen width you're reading this on, so here is an image as well.
 
@@ -225,7 +225,7 @@ To utilize this guide for pentesting or bug hunting, remember that understanding
 <a name="conclusion"/>
 
 ## Conclusion:
-While AI offers immense potential in numerous applications, developers must be vigilant to the inherent security risks, particularly prompt injection. By understanding these risks and applying the principles outlined above, you can build applications that harness the power of AI while maintaining a robust security stance.
+AI offers immense potential in numerous applications but developers should be aware of the inherent security risks, particularly prompt injection. By understanding these risks and applying the principles outlined above, we can build applications that harness the power of AI while maintaining a high level of security
 
 ## Attributions
 This was created by [Joseph Thacker (rez0)](https://twitter.com/rez0__) with feedback from [Hrishi](https://twitter.com/hrishioa), [Justin Gardner (Rhynorater)](https://twitter.com/Rhynorater/), and [Daniel Miessler](https://twitter.com/danielmiessler).
