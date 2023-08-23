@@ -80,7 +80,7 @@ This is a list of questions to answer about the feature or application being dev
 ![Flowchart](flowchart.png)
 
 ### 1) Untrusted input
-A. Who has access to the application or feature? Groups can be considered inclusive of the groups above them. It's assumed that if non-admin employees can access something, that admins can also access it.
+A. Who has access to the application or feature? Groups can be considered inclusive of the groups below them. It's assumed that if non-admin employees can access something, that admins can also access it.
   1. Employees (Admins only) -- if selected, the potential risk is "external input", but only if 1B is "yes" and if there is impactful functionality from section 2
   2. Employees (Non-Admins) -- if selected, the potential risk is "internal threat", but only if there is impactful functionality from section 2
   3. Users -- if selected, the potential risk is users utilizing prompt injection with their input, but only if there is impactful functionality from section 2
