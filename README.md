@@ -72,7 +72,7 @@ The focus of this guide is solely on the security implications associated with p
 <a name="worry"/>
 
 ## Do I need to worry about prompt injection?
-This is a list of question to answer about the feature or application being developed to determine if prompt injection is an issue. The flowchart is a visual representation, but the questions are likely better for printing or copying and pasting.
+This is a list of questions to answer about the feature or application being developed to determine if prompt injection is an issue. The flowchart is a visual representation, but the questions are likely better for printing or copying and pasting.
 
 <a name="flowchart"/>
 
