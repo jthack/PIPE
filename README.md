@@ -185,6 +185,7 @@ In situations where impactful functionality is vital, it would be advantageous t
 
 - **Shared Authorization:** If your application or feature is structured to only retrieve data or context pertaining to the authenticating user, the risk of unauthorized data access can be reduced. Allowing the AI-powered feature to share an authentication token or session with the user for backend API requests would prevent the feature from accessing data belonging to other users. This would potentially also help to mitigate SSRF risks and be applicable to RCE risks if the user has a "workspace" where their code can be executed such as how OpenAI's Code Interpreter works. 
 - **Read-Only:** When possible, for example when using an AI-powered feature to hit an API or make database calls, be sure and restrict the authorization to read-only.
+- **Sandboxing:** If executing code is required, a nearly perfect sandbox would be required. OpenAI's Code Interpreter pulls it off, but it's a hard problem to solve. Be wary!
 - **Rate-limiting:** There is a risk of utlizing the model for a user's own biddings rather than the intended use of the application. This can be harmful as it incurs costs on the business for an illegitimate user. I've heard stories of this inflicting as much as $25,000. Rate-limiting each user will limit this impact. Also, in my prompt injection security research, I found myself tweaking the same prompt over and over to achieve a goal of prompt injection, and fuzzing with many payloads. Both of these can be detected and prevented through stringent rate-limiting.
 
 You can further explore potential mitigations I've discussed on my [blog](https://rez0.blog/hacking/2023/04/19/prompt-injection-and-mitigations.html). The issue of prompt injection is far from resolved but is an area of active focus for many organizations. We remain hopeful about the future, where languages will potentially be equipped with libraries capable of addressing this challenge without causing significant performance problems.
@@ -203,4 +204,5 @@ There is multi-modal GPT-4 coming out soon, and it will have the same issue. Sin
 While AI offers immense potential in numerous applications, developers must be vigilant to the inherent security risks, particularly prompt injection. By understanding these risks and applying the principles outlined above, you can build applications that harness the power of AI while maintaining a robust security stance.
 
 ## Attributions
-This was created by [Joseph Thacker (rez0)](https://twitter.com/rez0__). 
+This was created by [Joseph Thacker (rez0)](https://twitter.com/rez0__) with feedback from [Hrishi](https://twitter.com/hrishioa), [Justin Gardner (Rhynorater)](https://twitter.com/Rhynorater/), and [Daniel Miessler](https://twitter.com/danielmiessler).
+
