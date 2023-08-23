@@ -28,15 +28,16 @@ In order for Prompt Injection to be a security risk, there must be two existing 
 1. Untrusted Input
 2. Impactful Functionality
 
-The problem is that it's easy to miss all ways untrusted input can be consumed by the AI-system, and it's easy to overlook how a feature can be used to impact security. 
+The problem is that it's easy to miss all the ways untrusted input can be consumed by the AI-system, and it's easy to overlook how a feature can be used to impact security. 
 
-Impactful functionality can be broken down in to having two major risk categories:
+Impactful functionality can be broken down into two major risk categories:
 
 **Unauthorized Data Access**
 - Internal-only data
 - Other users' data
 - Intellectual property
 - Communications data (emails, direct messages, etc.)
+
 **State-Changing Actions**
 - Modify permissions
 - Modify users, groups, or orgs
