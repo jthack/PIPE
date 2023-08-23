@@ -9,7 +9,7 @@
 [6. New Vectors for Traditional Web Vulnerabilities](#newvectors)  
 [7. Mitigations](#mitigations)  
 [9. Multi-modal Considerations](#multimodal)  
-[10. Applying These Methods to Pentesting](#pentesting)  
+[10. Hacking on AI-Powered Apps](#pentesting)  
 [11. Conclusion](#conclusion)  
 
 **Purpose:**
@@ -206,7 +206,7 @@ There is multi-modal GPT-4 coming out soon, and it will have the same issue. Sin
 
 <a name="pentesting"/>
 
-## Applying These Methods to Pentesting
+## Hacking on AI-Powered Apps
 
 To utilize this guide for pentesting or bug hunting, remember that understanding an application's or feature's prompt handling processes is key to uncovering prompt injection opportunities. Here's how you can structure your approach:
 
