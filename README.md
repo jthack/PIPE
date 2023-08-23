@@ -11,14 +11,14 @@
 [9. Multi-modal Considerations](#multimodal)  
 [10. Conclusion](#conclusion)  
 
+**Purpose:**
+The purpose of this guide is to to answer the questions: "Should I be worried about prompt injection? If so, why?" .
+
 ![PIPE](pipe.png)
 
 
 
 <a name="introduction"/>
-
-**Purpose:**
-The purpose of this guide is to to answer the questions: "Should I be worried about prompt injection? If so, why?" .
 
 ## Introduction:
 Prompt injection is the highest profile vulnerability in AI-powered features and applications. However, the impact varies greatly depending on who will use the feature, what data is accessible, and what functionality is exposed to the LLM. This guide aims to assist developers in creating secure AI-powered applications and features by helping understand the actual risks of prompt injection.
