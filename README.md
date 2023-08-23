@@ -174,11 +174,18 @@ The list above is not exhaustive. It's an example of the most common, impactful 
 <a name="mitigations"/>
 
 ## Mitigations
+
+### Existing Solutions
 While perfect mitigation against prompt injection isn't yet a guarantee, tools such as Nvidia's [NeMo](https://github.com/NVIDIA/NeMo) and protectai's [Rebuff](https://github.com/protectai/rebuff) have shown significant progress in tackling this risk. If your application is highly susceptible to prompt injection attacks, these tools could offer a layer of protection.
 
-If your application or feature is structured to only retrieve data or context pertaining to the authenticating user, the risk of unauthorized data access can be reduced. Allowing the AI-powered feature to share an authentication token or session with the user for backend API requests would prevent the feature from accessing data belonging to other users.
-
+### Dual-LLM Approach
 In situations where impactful functionality is vital, it would be advantageous to consider implementing the 'Dual LLM' design initially discussed by Simon Willison in his [blog post](https://simonwillison.net/2023/Apr/25/dual-llm-pattern/#dual-llms-privileged-and-quarantined). Although the suggestion that AI cannot mitigate prompt injection risk is contested, Willison's insights provide valuable reading on the topic.
+
+### Other Strong Mitigation Tactics
+
+- **Shared Authorization:** If your application or feature is structured to only retrieve data or context pertaining to the authenticating user, the risk of unauthorized data access can be reduced. Allowing the AI-powered feature to share an authentication token or session with the user for backend API requests would prevent the feature from accessing data belonging to other users. This would potentially also help to mitigate SSRF risks and be applicable to RCE risks if the user has a "workspace" where their code can be executed such as how OpenAI's Code Interpreter works. 
+- **Read-Only:** When possible, for example when using an AI-powered feature to hit an API or make database calls, be sure and restrict the authorization to read-only.
+- **Rate-limiting:** There is a risk of utlizing the model for a user's own biddings rather than the intended use of the application. This can be harmful as it incurs costs on the business for an illegitimate user. I've heard stories of this inflicting as much as $25,000. Rate-limiting each user will limit this impact. Also, in my prompt injection security research, I found myself tweaking the same prompt over and over to achieve a goal of prompt injection, and fuzzing with many payloads. Both of these can be detected and prevented through stringent rate-limiting.
 
 You can further explore potential mitigations I've discussed on my [blog](https://rez0.blog/hacking/2023/04/19/prompt-injection-and-mitigations.html). The issue of prompt injection is far from resolved but is an area of active focus for many organizations. We remain hopeful about the future, where languages will potentially be equipped with libraries capable of addressing this challenge without causing significant performance problems.
 
