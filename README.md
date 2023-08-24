@@ -1,4 +1,5 @@
 # PIPE - Prompt Injection Primer for Engineers
+_Bringing full clarity to questions about Prompt Injection Security_
 
 ### Table of Contents
 [1. Introduction](#introduction)  
@@ -12,8 +13,7 @@
 [10. Hacking on AI-Powered Apps](#pentesting)  
 [11. Conclusion](#conclusion)  
 
-**Purpose:**
-The purpose of this guide is to to answer the questions: "Should I be worried about prompt injection? If so, why?" .
+**Note:** If you'd rather read the PDF, click [here](pipe.pdf)!
 
 ![PIPE](pipe.png)
 
