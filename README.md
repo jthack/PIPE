@@ -21,10 +21,10 @@ The purpose of this guide is to to answer the questions: "Should I be worried ab
 
 <a name="introduction"/>
 
-## Introduction:
-Prompt injection is the highest profile vulnerability in AI-powered features and applications. However, the impact varies greatly depending on who will use the feature, what data is accessible, and what functionality is exposed to the LLM. This guide aims to assist developers in creating secure AI-powered applications and features by helping understand the actual risks of prompt injection.
+## Introduction
+Prompt injection is the highest profile vulnerability in AI-powered features and applications. It's also one of the most misunderstood. The impact varies greatly depending on who will use the feature, what data is accessible, and what functionality is exposed to the LLM. This guide aims to assist developers in creating secure AI-powered applications and features by helping understand the actual risks of prompt injection.
 
-### Requirements for Risk
+### Risk Factors
 In order for Prompt Injection to be a security risk, there must be two existing components.
 1. Untrusted Input
 2. Impactful Functionality
@@ -200,12 +200,22 @@ You can further explore potential mitigations I've discussed on my [blog](https:
 
 <a name="multimodal"/>
 
-## Multi-modal Considerations
+## Multi-modal Prompt Injection
+
+### Image
 Image-processing generative AI can also be suceptible to prompt injection leading to all the implications that we've discussed above. Johann was the first to share it in Bard:
 
 [https://twitter.com/wunderwuzzi23/status/1679676160341581824](https://twitter.com/wunderwuzzi23/status/1679676160341581824)
 
-There is multi-modal GPT-4 coming out soon, and it will have the same issue. Since the image processing functionality can do OCR (optical character recognition), and they are attached to LLMs, prompt injection text can be in the image and be processed by the LLM.
+There is multi-modal GPT-4 coming out soon, and it will have the same issue. 
+
+Image processing functionality does OCR (optical character recognition), and as they are still LLMs under the hood, prompt injection is possible via text on the image.
+
+### Voice
+Naturally, voice gets parsed as text, so voice-based prompt injection is viable.
+
+### Video
+There aren't video-based multi-modal models yet. I assume the image+text models can effectively do video processing if handling the video frame-by-frame, but that's different from processing the video as a single input file. However, video is simply images and voice (which reduces to text) so prompt injection would be viable for video models as well.
 
 <a name="pentesting"/>
 
@@ -227,7 +237,7 @@ To utilize this guide for pentesting or bug hunting, remember that understanding
 
 <a name="conclusion"/>
 
-## Conclusion:
+## Conclusion
 AI offers immense potential in numerous applications but developers should be aware of the inherent security risks, particularly prompt injection. By understanding these risks and applying the principles outlined above, we can build applications that harness the power of AI while maintaining a high level of security
 
 ## Attributions
