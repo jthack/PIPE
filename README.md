@@ -13,7 +13,7 @@ _Bringing clarity to questions about Prompt Injection Security_
 [10. Hacking on AI-Powered Apps](#pentesting)  
 [11. Conclusion](#conclusion)  
 
-**Note:** If you'd rather read the PDF, click [here](pipe.pdf)!
+## **Note:** If you'd rather read the PDF, click [here](pipe.pdf)!
 
 ![PIPE](pipe.png)
 
