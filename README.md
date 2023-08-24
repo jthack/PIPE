@@ -22,14 +22,14 @@ The purpose of this guide is to to answer the questions: "Should I be worried ab
 <a name="introduction"/>
 
 ## Introduction
-Prompt injection is the highest profile vulnerability in AI-powered features and applications. It's also one of the most misunderstood. The impact varies greatly depending on who will use the feature, what data is accessible, and what functionality is exposed to the LLM. This guide aims to assist developers in creating secure AI-powered applications and features by helping understand the actual risks of prompt injection.
+Prompt injection is the highest profile vulnerability in AI-powered features and applications. It's also one of the most misunderstood. The impact varies greatly depending on who will use the feature, what data is accessible, and what functionality is exposed to the LLM. This guide aims to assist developers in creating secure AI-powered applications and features by helping them understand the actual risks of prompt injection.
 
 ### Risk Factors
 In order for Prompt Injection to be a security risk, there must be two existing components.
 1. Untrusted Input
 2. Impactful Functionality
 
-The problem is that it's easy to miss all the ways untrusted input can be consumed by the AI-system, and it's easy to overlook how a feature can be used to impact security. 
+The problem is that it's easy to miss all the ways untrusted input can be consumed by an AI system, and it's easy to overlook how a feature can be used to impact security. 
 
 Impactful functionality can be broken down into two major risk categories:
 
@@ -44,7 +44,7 @@ Impactful functionality can be broken down into two major risk categories:
 - Modify users, groups, or orgs
 
 **Note on Scope:**
-The focus of this guide is solely on the security implications associated with prompt injections. Trust, bias, and ethical considerations related to LLM outputs, while crucial in their own right, are outside the purview of this discussion.
+The focus of this guide is solely on the security implications associated with prompt injections. Trust, bias, and ethical considerations related to LLM outputs, while important in their own right, are outside the purview of this discussion.
 
 <a name="background"/>
 
@@ -52,10 +52,10 @@ The focus of this guide is solely on the security implications associated with p
 ### Understanding the Basics:
 
 1. **What is Prompt Injection?**
-   Prompt injection is a technique where malicious users provide misleading input that manipulate the output of an AI system.
+   Prompt injection is a hacking technique where malicious users provide misleading input that manipulates the output of an AI system.
 
 2. **Consequences:**
-   To clarify the security impact instead of trust, bias, and ethical impact, we are focused on attacks that can lead to effects on the Confidentiality, Integrity, and Availability (CIA) of an application:
+   To highlight the security impact as opposed to that of trust, bias, and ethical impact, we will focus on attacks that can lead to effects on the Confidentiality, Integrity, and Availability (CIA) of an application:
 
     - **Confidentiality:** Exposing sensitive data or user information.
     - **Integrity:** Misleading information or harmful actions.
