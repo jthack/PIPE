@@ -1,5 +1,5 @@
 # PIPE - Prompt Injection Primer for Engineers
-_Bringing full clarity to questions about Prompt Injection Security_
+_Bringing clarity to questions about Prompt Injection Security_
 
 ### Table of Contents
 [1. Introduction](#introduction)  
