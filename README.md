@@ -25,11 +25,13 @@ _Bringing clarity to questions about Prompt Injection Security_
 Prompt injection is the highest profile vulnerability in AI-powered features and applications. It's also one of the most misunderstood. The impact varies greatly depending on who will use the feature, what data is accessible, and what functionality is exposed to the LLM. This guide aims to assist developers in creating secure AI-powered applications and features by helping them understand the actual risks of prompt injection.
 
 ### Risk Factors
-In order for Prompt Injection to be a security risk, there must be two existing components.
+In order for Prompt Injection to be a security risk, there must* be two existing components.
 1. Untrusted Input
 2. Impactful Functionality
 
 The problem is that it's easy to miss all the ways untrusted input can be consumed by an AI system, and it's easy to overlook how a feature can be used to impact security. 
+
+_*Note: Technically for deception risks, only Untrusted Input is requied._
 
 Impactful functionality can be broken down into two major risk categories:
 
@@ -189,10 +191,10 @@ While perfect mitigation against prompt injection isn't yet a guarantee, tools s
 ### Dual-LLM Approach
 In situations where impactful functionality is vital, it would be advantageous to consider implementing the 'Dual LLM' design initially discussed by Simon Willison in his [blog post](https://simonwillison.net/2023/Apr/25/dual-llm-pattern/#dual-llms-privileged-and-quarantined). Although the suggestion that AI cannot mitigate prompt injection risk is contested, Willison's insights provide valuable reading on the topic.
 
-### Other Strong Mitigation Tactics
+### High-level Mitigation Principles
 
-- **Shared Authorization:** If your application or feature is structured to only retrieve data or context pertaining to the authenticating user, the risk of unauthorized data access can be reduced. Allowing the AI-powered feature to share an authentication token or session with the user for backend API requests would prevent the feature from accessing data belonging to other users. This would potentially also help to mitigate SSRF risks and be applicable to RCE risks if the user has a "workspace" where their code can be executed such as how OpenAI's Code Interpreter works. 
-- **Read-Only:** When possible, for example when using an AI-powered feature to hit an API or make database calls, be sure and restrict the authorization to read-only.
+- **Shared Authorization:** The user and AI-powered feature or application should share authorization. Doing so reduces the odds of unauthorized data access. Practically, they should share an authentication token or session. This tackles the problem of unauthorized access to data for API calls and database calls, but also may help mitigate SSRF risks. It could also be applicable to RCE if the user has auth to a "workspace" where their code can be executed such as how OpenAI's Code Interpreter works. 
+- **Read-Only:** When possible, restrict the feature to read-only access. For example, when using an AI-powered feature to hit an API or make database calls, be sure the permissions are read-only.
 - **Sandboxing:** If executing code is required, a nearly perfect sandbox would be required. OpenAI's Code Interpreter pulls it off, but it's a hard problem to solve. Be wary!
 - **Rate-limiting:** There is a risk of utlizing the model for a user's own biddings rather than the intended use of the application. This can be harmful as it incurs costs on the business for an illegitimate user. I've heard stories of this inflicting as much as $25,000. Rate-limiting each user will limit this impact. Also, in my prompt injection security research, I found myself tweaking the same prompt over and over to achieve a goal of prompt injection, and fuzzing with many payloads. Both of these can be detected and prevented through stringent rate-limiting.
 
