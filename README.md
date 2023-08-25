@@ -31,7 +31,7 @@ In order for Prompt Injection to be a security risk, there must* be two existing
 
 The problem is that it's easy to miss all the ways untrusted input can be consumed by an AI system, and it's easy to overlook how a feature can be used to impact security. 
 
-_*Note: Technically for deception risks, only Untrusted Input is requied._
+_*Note: Technically for deception risks, only Untrusted Input is required._
 
 Impactful functionality can be broken down into two major risk categories:
 
